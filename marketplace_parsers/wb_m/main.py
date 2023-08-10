@@ -1,6 +1,7 @@
 import pandas as pd
 import requests
 
+
 proxies = {
     'htttp': 'СЮДА НУЖНО ВВЕСТИ ПРОКСИ'
 }
