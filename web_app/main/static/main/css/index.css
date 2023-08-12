@@ -1,7 +1,353 @@
-body {
-    background-color: #2c2c2c;
+html, body {
+    height: 100%;
+    background: gray;
 }
 
-h1, p {
+
+
+
+
+.navbar-dark .navbar-brand {
+    font-family: "3dventure";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+
+.navbar-dark .navbar-nav .nav-link {
+    font-family: "amstrad";
+    font-size: 1rem;
+}
+#hero {
+    width: 100%;
+
+}
+
+
+#hero:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#hero .container {
+    position: relative;
+    padding-top: 8vh;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+
+}
+
+
+
+
+/*Экран смартфона*/
+@media screen and (max-width: 540px) {
+        #hero h1 {
+        margin: 20px 20px 0 20px;
+        font-family: "rus_amstrad";
+        font-weight: 700;
+        line-height: 30px;
+        font-size: calc(8px + 3vw);
+        color: #ffffff;
+    }
+
+    #hero_p {
+        margin-top: 20px;
+        font-family: "rus_amstrad";
+        font-weight: 700;
+        line-height: 20px;
+        font-size: calc(4px + 1.5vw);
+        color: #ffffff;
+    }
+
+    .container1 {
+    position: relative;
+    margin: 40px auto;
+    width: 100px;
+    height: 100px;
+    perspective: 500px;
+    }
+    .cube {
+        width: inherit;
+        height: inherit;
+        transform-style: preserve-3d;
+        transform: rotate3d(-2, -3, -1, -45deg);
+    }
+
+    .side {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border: 5px solid #ffffff;
+        font-size: 10px;
+        text-align: center;
+        /*line-height: 300px;*/
+        color: #ffffff;
+
+    }
+
+
+    .side p {
+        font-family: "rus_amstrad";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .front {
+        transform: translateZ(50px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(50px);
+    }
+
+    .toright {
+        transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+    }
+
+}
+
+
+
+/*Большие экраны*/
+@media screen and (max-width: 4000px) and (min-width: 541px) {
+        #hero h1 {
+        margin: 20px 20px 0 20px;
+        font-family: "rus_amstrad";
+        font-weight: 700;
+        line-height: 64px;
+        font-size: calc(4px + 2.5vw);
+        color: #ffffff;
+    }
+
+    #hero p {
+        margin: 0;
+        font-family: "rus_amstrad";
+        font-weight: 700;
+        line-height: 64px;
+        font-size: calc(2px + 1.5vw);
+        color: #ffffff;
+    }
+    .container1 {
+        position: relative;
+        margin: 200px auto;
+        width: 150px;
+        height: 150px;
+        perspective: 500px;
+    }
+
+
+    .cube {
+        width: inherit;
+        height: inherit;
+        transform-style: preserve-3d;
+        transform: rotate3d(-2, -3, -1, -45deg);
+    }
+
+    .side {
+        position: absolute;
+        width: inherit;
+        height: inherit;
+        border: 5px solid #00FF00;
+        text-align: center;
+        /*line-height: 300px;*/
+        color: #1c7d00;
+    }
+
+
+    .side #side_name{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        font-size: 12.5px;
+        transform: translate(-50%, -50%);
+    }
+
+    .front {
+        transform: translateZ(75px);
+    }
+
+    .back {
+        transform: rotateY(180deg) translateZ(75px);
+    }
+
+    .toright {
+        transform: rotateY(90deg) translateZ(75px);
+    }
+
+    .left {
+        transform: rotateY(-90deg) translateZ(75px);
+    }
+
+    .top {
+        transform: rotateX(90deg) translateZ(75px);
+    }
+
+    .bottom {
+        transform: rotateX(-90deg) translateZ(75px);
+    }
+}
+
+
+
+.border-top {
+    border-top: 4px solid #ffffff!important;
+}
+footer {
+    margin-top: 80px;
+    background-color: #2c2c2c;
+    align-items: flex-end;
+}
+.page-footer {
+    margin-top: 40px!important;
+}
+
+.footer-copyright {
+    border-top: 1px solid #ffffff!important;
+    font-family: "amstrad";
     color: #ffffff;
+}
+
+
+
+
+
+.output-console {
+
+    font-family: "amstrad";
+    overflow:hidden;
+    margin-bottom: 100px;
+    border: 4px solid #00FF00;
+    border-style: outset;
+}
+p{
+    margin: 0 0 0 10px;
+    color: #00FF00;
+}
+
+span {
+    margin-left: 10px;
+    color: #00FF00;
+}
+
+
+
+@font-face {
+    font-family: "amstrad";
+    src: url("../fonts/amstrad/amstrad.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "rus_amstrad";
+    src: url("../fonts/rus_amstrad/rus_amstrad.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+
+}
+
+@font-face {
+    font-family: "3dventure";
+    src: url("../fonts/3dventure/3dventure1.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+
+}
+
+
+.container2 {
+    height: 400px;
+    width: 300px;
+}
+
+#wrap {
+  perspective: 800px;
+  perspective-origin: 50% 100px;
+  top: calc(50vh - 100px);
+  left: calc(50vw - 100px);
+  position: absolute;
+}
+
+
+#cube {
+  animation: spin 10s infinite linear;
+  transform-style: preserve-3d;
+  transform-origin: 50% 100px;
+  width: 200px;
+
+}
+
+#front, #back, #left, #right, #top, #bottom {
+
+}
+
+#cube:hover {
+  animation-play-state: paused;
+}
+
+#cube div {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border: 4px solid #00FF00;
+  box-sizing: border-box;
+
+}
+
+#front {
+  transform: translateZ(100px);
+}
+
+#right {
+  transform: rotateY(90deg) translateX(100px);
+  transform-origin: top right;
+}
+
+#back {
+  transform: translateZ(-100px);
+}
+
+#left {
+  transform: rotateY(270deg) translateX(-100px);
+  transform-origin: top left;
+}
+
+#top {
+  transform: rotateX(90deg) translateY(-100px);
+  transform-origin: top center;
+}
+
+#bottom {
+  transform: rotateX(90deg) translateY(100px);
+  transform-origin: bottom center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(460deg) rotateX(220deg);
+  }
 }
