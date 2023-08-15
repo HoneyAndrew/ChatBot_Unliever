@@ -11,13 +11,20 @@ def connect_to_db():
     )
 
 def get_marketplace_and_category_ids(cursor, marketplace_name, category_name):
-    cursor.execute("SELECT id FROM Marketplaces WHERE name = %s", (marketplace_name,))
-    marketplace_id = cursor.fetchone()[0]
+    cursor.execute("SELECT marketplace_id FROM Marketplaces WHERE name = %s", (marketplace_name,))
+    result = cursor.fetchone()
+    if result is None:
+        raise Exception(f"Marketplace with name '{marketplace_name}' not found in the database.")
+    marketplace_id = result[0]
 
-    cursor.execute("SELECT id FROM Categories WHERE name = %s", (category_name,))
-    category_id = cursor.fetchone()[0]
+    cursor.execute("SELECT category_id FROM Categories WHERE name = %s", (category_name,))
+    result = cursor.fetchone()
+    if result is None:
+        raise Exception(f"Category with name '{category_name}' not found in the database.")
+    category_id = result[0]
 
     return marketplace_id, category_id
+
 
 def add_product_to_db(cursor, product, marketplace_id, category_id):
     product_data = (
