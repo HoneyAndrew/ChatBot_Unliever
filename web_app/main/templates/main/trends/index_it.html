@@ -22,7 +22,7 @@
                 <ul class="navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}"><i class="fas fa-tachometer-alt" style="color: rgb(208,80,8);"></i><span>Маркетинговые тренды</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'generator' %}"><i class="fas fa-table" style="color: rgb(208,80,8);"></i><span>Генерация трендов</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"><i class="fas fa-user" style="color: rgb(208,80,8);"></i><span>Личный кабинет</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="profile"><i class="fas fa-user" style="color: rgb(208,80,8);"></i><span>Личный кабинет</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="far fa-user-circle" style="color: rgb(208,80,8);"></i><span>Вход</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-circle" style="color: rgb(208,80,8);"></i><span>Регистрация</span></a></li>
                 </ul>
@@ -127,11 +127,9 @@
                 </nav>
                 <div class="container-fluid">
                     <div class="d-sm-flex justify-content-between align-items-center mb-4" style="margin-top: 40px; margin-bottom: 40px">
-                        <h3 class="text mb-0" style="color: #FFFFFF;">Аналитика трендов</h3>
+                        <h3 class="text mb-0" style="color: #FFFFFF;">IT</h3>
                     </div>
-                    <div>
-                        <button class="btn btn-primary" aria-expanded="false"  type="button" style="margin-top: 40px; margin-bottom: 40px; background-color: rgb(208,80,8)">Выберите нужную категорию товаров</button>
-                    </div>
+
                     <div style="margin-bottom: 40px">
                         <a href="{% url 'beauty' %}" style="margin-right: 20px; color: rgb(208,80,8)">Красота</a>
                         <a href="{% url 'products' %}" style="margin-right: 20px; color: rgb(208,80,8)">Продукты</a>
@@ -146,7 +144,78 @@
                             <p class="text m-0 fw-bold" style="color: #FFFFFF">Список трендов по выбранной категории</p>
                         </div>
                         <div class="card-body" style="background: rgb(63,61,72);">
-
+                            <div class="row">
+                                <div class="col-md-6 text-nowrap">
+                                    <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"><label class="form-label">Show&nbsp;<select class="d-inline-block form-select form-select-sm">
+                                                <option value="10" selected="">5</option>
+                                                <option value="25">25</option>
+                                                <option value="50">50</option>
+                                                <option value="100">100</option>
+                                            </select>&nbsp;</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="text-md-end dataTables_filter" id="dataTable_filter"><label class="form-label"><input type="search" class="form-control form-control-sm" aria-controls="dataTable" placeholder="Search"></label></div>
+                                </div>
+                            </div>
+                            <div class="table-responsive table mt-2" id="dataTable-1" role="grid" aria-describedby="dataTable_info">
+                                <table class="table my-0" id="dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>Название товара</th>
+                                            <th>Дата публикации</th>
+                                            <th>Актуальная цена</th>
+                                            <th>Цена без скидки</th>
+                                            <th>Средняя оценка</th>
+                                            <th>Количество заказов</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>{{ name_1 }}</td>
+                                            <td>{{ date_1 }}</td>
+                                            <td>{{ last_price_1 }}</td>
+                                            <td>{{ high_price_1 }}</td>
+                                            <td>{{ rate_1 }}<br></td>
+                                            <td>{{ count_1 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ name_2 }}</td>
+                                            <td>{{ date_2 }}</td>
+                                            <td>{{ last_price_2 }}</td>
+                                            <td>{{ high_price_2 }}</td>
+                                            <td>{{ rate_2 }}<br></td>
+                                            <td>{{ count_2 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ name_3 }}</td>
+                                            <td>{{ date_3 }}</td>
+                                            <td>{{ last_price_3 }}</td>
+                                            <td>{{ high_price_3 }}</td>
+                                            <td>{{ rate_3 }}<br></td>
+                                            <td>{{ count_3 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ name_4 }}</td>
+                                            <td>{{ date_4 }}</td>
+                                            <td>{{ last_price_4 }}</td>
+                                            <td>{{ high_price_4 }}</td>
+                                            <td>{{ rate_4 }}<br></td>
+                                            <td>{{ count_4 }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ name_5 }}</td>
+                                            <td>{{ date_5 }}</td>
+                                            <td>{{ last_price_5 }}</td>
+                                            <td>{{ high_price_5 }}</td>
+                                            <td>{{ rate_5 }}<br></td>
+                                            <td>{{ count_5 }}</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    </tfoot>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
